@@ -1,25 +1,8 @@
 <html>
-  
-  <head>
-    <script src='https://connect.facebook.net/en_US/sdk.js'></script>
-    
-<style>
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-</style>
-  </head>
-  
+
 <body>
+ <head>
+  </head>
 <script>
   window.fbAsyncInit = function() {
   FB.init({
@@ -28,10 +11,12 @@
     xfbml            : true,
     version          : 'v6.0'
   });
+  FB.Event.subscribe('send_to_messenger', function(e) {
+                console.log(e);});
 };
 </script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>    
-
+  <a>Hhhhhhhh</a>
 <div class="fb-send-to-messenger" 
   messenger_app_id="<811987785971081>" 
   page_id="Bref-demo1" 
@@ -39,10 +24,7 @@
   color="<blue>" 
   size="<large>"
 </div> 
-<script>
-FB.Event.subscribe('send_to_messenger', function(e) {
-console.log(e);});
- </script>
+
   
 </body>
 </html>
