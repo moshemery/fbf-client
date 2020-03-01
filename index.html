@@ -17,12 +17,25 @@
 </style>
   </head>
   
-  <body>
-<h1>Hello</h1>
-<p>
-<a href='https://m.me/Bref-demo1?ref=TALK_ABOUT_KINDLGARDEN'>
-<button class="button">Pale-blue</button> 
-</a>
-    </p>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId            : '811987785971081',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v6.0'
+  });
+};
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>    
+
+<div class="fb-send-to-messenger" 
+  messenger_app_id="811987785971081" 
+  page_id="Bref-demo1" 
+  data-ref="TALK_ABOUT_100001" 
+  color="blue" 
+  size="large"
+</div>  
 </body>
 </html>
