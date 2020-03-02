@@ -1,21 +1,21 @@
 <html>
-
-<body>
  <head>
   </head>
+ 
+ <body>
+<script src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script>
-  window.fbAsyncInit = function() {
   FB.init({
-    appId            : '811987785971081',
-    autoLogAppEvents : true,
-    xfbml            : true,
-    version          : 'v6.0'
+    appId: 811987785971081,
+    status: true,
+    xfbml: true,
+    version: 'v6.0'
   });
+  FB.AppEvents.logPageView();
   FB.Event.subscribe('send_to_messenger', function(e) {
                 console.log(e);});
-};
 </script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>    
+
   <a>Hhhhhhhh</a>
  <p>
 <div class="fb-send-to-messenger" 
