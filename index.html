@@ -9,8 +9,17 @@
     appId: 811987785971081,
     status: true,
     xfbml: true,
-    version: 'v2.6'
+    version: 'v6.0'
   });
+ FB.Event.subscribe('auth.login', function (response) {     
+        // do something with response                   
+        if (response.status === 'connected') {
+            // user connected                        
+            FB.api('/me', function (response) {
+                alert(response.name + " " + response.id);
+            });
+        }
+});
   FB.Event.subscribe('send_to_messenger', 
                  function(e) {
                 console.log(e);
