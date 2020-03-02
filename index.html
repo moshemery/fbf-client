@@ -17,15 +17,26 @@
                    });
 </script>
 <p>
-  <a>This botton needs to be copied to a customers site. Data ref should include the context of discussion</a>
+ <div>
+  <a>This button should be clicked by conssultent</a>
+   <label for="subjectToTalkAbout">Subject to talk about:</label>
+  <input type="text" id="subjectToTalkAbout" name="fname"><br><br>
+  </div>
 <div class="fb-send-to-messenger" 
   messenger_app_id="811987785971081"
   page_id="106563677609074" 
   data-ref="TALK_ABOUT_100001" 
   color="blue" 
   size="large"></div> 
- <button onclick="window.location.href = 'http://m.me/Bref-demo1?ref=TALKABOUT12345';">Task to a buyer ? click here</button>        
+ <button onclick=ConsultentButtonOnClick(e)">Task to a buyer ? click here</button>        
  </p> 
- 
+ <script>
+  function ConsultentButtonOnClick(e)
+  {
+    const ref = getElementById('subjectToTalkAbout').value;
+    const url = 'http://m.me/Bref-demo1?ref='+ref;
+    window.location.href = url;
+  }
+ </script>
 </body>
 </html>
