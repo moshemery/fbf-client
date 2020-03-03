@@ -29,8 +29,7 @@
 </script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
+
 
 <div style="alignment: center; font-size: medium">
 <h1>Thank you for buying product A10001 </h1>
@@ -40,32 +39,22 @@
      page_id="106563677609074"
      data-ref="TALK_ABOUT_A10001"
      color="blue"
-     size="large"
+     size="xlarge"
      cta_text='SEND_ME_MESSAGES'></div>
 </div>
-
-<p>
-<div>
-    <a>This button should be clicked by conssultent</a>
-    <label for="subjectToTalkAbout">Subject to talk about:</label>
-    <input type="text" id="subjectToTalkAbout" name="fname"><br><br>
-    <button onclick="ConsultentButtonOnClick()">Task to a buyer ? click here</button>
-</div>
-
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<!-- Your customer chat code -->
 <div class="fb-customerchat"
      attribution=setup_tool
      page_id="106563677609074"
-     ref="BAMBA5">
+     logged_in_greeting="המערכת מאתרת בעלי ניסיון"
+     logged_out_greeting="המערכת מאתרת בעלי ניסיון"
+     ref="TALK_ABOUT_A10001">
 </div>
-</p>
-<script>
-    function ConsultentButtonOnClick()
-    {
-        const ref = document.getElementById('subjectToTalkAbout').value;
-        const url = 'http://m.me/Bref-demo1?ref='+ref;
-        window.location.href = url;
 
-    }
+<script>
+
 
     console.log(document.getElementById('refDiv'));
 
