@@ -33,7 +33,9 @@ margin: auto;
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-
+    window.onload = function () {
+        document.getElementsByClassName("fb-customerchat")[0].setAttribute("ref", "WANT_TO_BUY_A10001");
+    };
 
 
     </script>
@@ -50,8 +52,7 @@ margin: auto;
      attribution=install_email
      page_id="106563677609074"
      logged_in_greeting="המערכת מאתרת בעלי ניסיון"
-     logged_out_greeting="מקווים שהצלחנו לעזור"
-      ref="WANT_TO_BUY_A10001">
+     logged_out_greeting="מקווים שהצלחנו לעזור">
 </div>
     </p>
 </div>
