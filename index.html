@@ -1,8 +1,14 @@
 <html>
-<head>
-</head>
-
+    <head>
+        <style>
+            div.wrap {
+                width:360px;
+                margin:0 auto;
+            }
+        </style>
+    </head>
 <body>
+<div class="wrap">
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -41,8 +47,9 @@
      color="blue"
      size="xlarge"
      cta_text='SEND_ME_MESSAGES'></div>
+    <h6>לחץ להסכמה</h6>
 </div>
-<h2>לחץ להסכמה</h2>
+
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <!-- Your customer chat code -->
@@ -53,6 +60,6 @@
      logged_out_greeting="המערכת מאתרת בעלי ניסיון"
      ref="TALK_ABOUT_A10001">
 </div>
-
+</div>
 </body>
 </html>
