@@ -23,6 +23,10 @@
         FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
             if (response.status === 'connected') {
                 document.getElementById('logintofb').classList.remove('fb-login-button');
+                FB.Event.subscribe('send_to_messenger',
+                    function(e) {
+                        console.log(e);
+                    });
             }
         });
 
@@ -34,10 +38,6 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
 
-        FB.Event.subscribe('send_to_messenger',
-            function(e) {
-                console.log(e);
-            });
     };
 
 

@@ -24,6 +24,10 @@ margin: auto;
             if (response.status === 'connected') {
                 document.getElementById('logintofb').classList.remove('fb-login-button');
             }
+            FB.Event.subscribe('send_to_messenger',
+                function(e) {
+                    console.log(e);
+                });
         });
 
         (function (d, s, id) {
