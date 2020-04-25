@@ -22,7 +22,7 @@ margin: auto;
         });
         FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
             if (response.status === 'connected') {
-                document.getElementById('logintofb').className = 'bla';
+                document.getElementById('logintofb').classList.remove('fb-login-button');
             }
         });
 
