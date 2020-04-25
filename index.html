@@ -12,7 +12,6 @@
     <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v6.0&appId=811987785971081&autoLogAppEvents=1"></script>
 <script>
-    var userInfo='';
     window.fbAsyncInit = function() {
         FB.init({
             appId: 811987785971081,
@@ -34,9 +33,17 @@
                 console.log(e);
             });
         FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-            if (response.status === 'connected')
+            if (response.status !== 'connected')
             {
-                document.getElementById('logintofb').hidden=true;
+                const div = document.createElement('div');
+                div.className = 'fb-send-to-messenger';
+                div.dataSize="large";
+                div.dataButtonType="continue_with";
+                div.dataLayout="default";
+                div.dataAutoLogoutLink="false";
+                div.dataUseContinueAs="false";
+                div.dataWidth="";
+                document.getElementById('body').appendChild(div);
             }
         });
     };
