@@ -17,19 +17,24 @@ margin: auto;
 
     window.fbAsyncInit = function() {
         FB.init({
-            xfbml            : true,
-            version          : 'v6.0'
+            xfbml: true,
+            version: 'v6.0'
         });
+        FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
+            if (response.status === 'connected') {
+                document.getElementById('logintofb').hidden = true;
+            }
+        });
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/he_IL/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     };
-
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/he_IL/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
 </script>
 <div style="alignment: center; font-size: medium ; horiz-align: center;text-align: right">
 <p>Would you like to consult with someone who already bought AT58 hair dryer?</p>
@@ -45,7 +50,5 @@ margin: auto;
 </div>
 <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
 </div>
-</div>
-
 </body>
 </html>
