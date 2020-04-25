@@ -20,9 +20,12 @@ margin: auto;
             xfbml: true,
             version: 'v6.0'
         });
-        FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
-            var element = document.getElementById("logintofb");
-            element.parentNode.removeChild(element);
+        FB.getLoginStatus(function (response) {
+            // Called after the JS SDK has been initialized.
+                if (response.status === 'connected') {
+                    var element = document.getElementById("logintofb");
+                    element.parentNode.removeChild(element);
+                }
             }
         );
 
@@ -34,12 +37,14 @@ margin: auto;
             js.src = 'https://connect.facebook.net/he_IL/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    if (response.status === 'connected') {
-        FB.Event.subscribe('send_to_messenger',
-            function (e) {
-                console.log(e);
-            });
-    };
+        if (response.status === 'connected') {
+            FB.Event.subscribe('send_to_messenger',
+                function (e) {
+                    console.log(e);
+                });
+        }
+        ;
+    }
 </script>
 <div style="alignment: center; font-size: medium ; horiz-align: center;text-align: right">
 <p>Would you like to consult with someone who already bought AT58 hair dryer?</p>
