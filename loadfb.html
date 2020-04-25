@@ -19,10 +19,6 @@ margin: auto;
             xfbml            : true,
             version          : 'v6.0'
         });
-
-        FB.CustomerChat.update({
-            ref: 'WANT_TO_BUY_A10002',
-        });
     };
 
     (function(d, s, id) {
@@ -32,25 +28,11 @@ margin: auto;
         js.src = 'https://connect.facebook.net/he_IL/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-/*
-    window.onload = function () {
-        document.getElementsByClassName("fb-customerchat")[0].setAttribute("ref", "WANT_TO_BUY_A100012");
-    };
-*/
 
-    </script>
-
-
-
-
-
+</script>
 <div style="alignment: center; font-size: medium ; horiz-align: center;text-align: right">
-    <h1> רוצה לשוחח עם מישהו שכבר קנה A10001?</h1>
-                                                                                       
-                                                                                         
-                                                                                         
-                                                                                         
-                                                                                         
+<h1>Would you like to consult with someone who already bought AT58 hair dryer?</h1>
+
 <!-- Your customer chat code -->
 <div id="refDiv" class="fb-send-to-messenger"
      messenger_app_id="811987785971081"
@@ -59,10 +41,8 @@ margin: auto;
      color="blue"
      size="xlarge"
      cta_text='LET_US_CHAT'></div>
-    <h6 href='http://m.me/Bref-demo1?ref=1:123456:996'>לחץ להתחלת שיחה</h6>
 </div>
-                                                                                       
-    </p>
+<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
 </div>
 </div>
 
