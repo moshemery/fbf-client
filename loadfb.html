@@ -22,7 +22,7 @@ margin: auto;
         });
         FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
             if (response.status === 'connected') {
-                document.getElementById('logintofb').hidden = true;
+                document.getElementById('logintofb').class = 'bla';
             }
         });
 
@@ -48,7 +48,7 @@ margin: auto;
      size="xlarge"
      cta_text='LET_US_CHAT'></div>
 </div>
-<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
+<div id='logintofb' class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
 </div>
 </body>
 </html>
