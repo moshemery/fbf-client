@@ -12,7 +12,8 @@ margin: auto;
 <div class="wrap">
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v6.0&appId=811987785971081&autoLogAppEvents=1"></script>
+<--script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v6.0&appId=811987785971081&autoLogAppEvents=1"><--script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&autoLogAppEvents=1&version=v7.0&appId=811987785971081" nonce="Wc7z6erm"></script>
 <script>
 
     window.fbAsyncInit = function() {
@@ -20,15 +21,6 @@ margin: auto;
             xfbml: true,
             version: 'v6.0'
         });
-        FB.getLoginStatus(function (response) {
-            // Called after the JS SDK has been initialized.
-                if (response.status === 'connected') {
-                    var element = document.getElementById("logintofb");
-                    element.parentNode.removeChild(element);
-                }
-            }
-        );
-
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -37,13 +29,19 @@ margin: auto;
             js.src = 'https://connect.facebook.net/he_IL/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-        if (response.status === 'connected') {
-            FB.Event.subscribe('send_to_messenger',
-                function (e) {
-                    console.log(e);
-                });
-        }
-        ;
+
+        FB.getLoginStatus(function (response) {
+            // Called after the JS SDK has been initialized.
+                if (response.status === 'connected') {
+                    var element = document.getElementById("logintofb");
+                    element.parentNode.removeChild(element);
+                }
+                    FB.Event.subscribe('send_to_messenger',
+                        function (e) {
+                            console.log(e);
+                        });
+            }
+        );
     }
 </script>
 <div style="alignment: center; font-size: medium ; horiz-align: center;text-align: right">
