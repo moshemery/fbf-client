@@ -53,6 +53,12 @@ color: #FF0000;
             border: 1px solid #000000;
 box-sizing: border-box;
         }
+        .myFlex{
+               display: flex;           /* establish flex container */
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+        }
 
     </style>
 </head>
@@ -64,7 +70,7 @@ box-sizing: border-box;
     <div class='t1'>Referaction is a company that increases conversion rates by connecting <a class='p1'>Potential Clients</a> with <a class='p1'>Happy Clients</a>.</div>
     <div class='t2'>We believe it's all about consumer trust!</div>
     <div class='t3'>Coming soon... </div>
-    <div>
+    <div class="myflex">
     <input type="text" class="box" value="First and last name">
     <input type="text" class="box" value="email">
     <input type="text" class="box" value="Telephone">
