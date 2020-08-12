@@ -84,7 +84,7 @@ line-height: 38px;
 color: #A9A9A9
         }
 
-        button {
+        .mybutton {
             width: 350px;
 height: 35px;
 
@@ -118,15 +118,30 @@ color: #FFFFFF;
     <div class='t2'>We believe it's all about consumer trust!</div>
     <div class='t3'>Coming soon... </div>
     <div class="myflex">
-    <input type="text" class="box" value="First and last name">
-    <input type="text" class="box" value="email">
-    <input type="text" class="box" value="Telephone">
-    <input type="text" class="box" value="message">
+
+    <form action="mailto::aviv@referaction.com" method="post"               enctype="text/plain">
+    <input type="text" name='name' class="box" value="First and last name">
+    <input type="text" name='email' class="box" value="email">
+    <input type="text" name='telephone' class="box" value="Telephone">
+    <input type="text" name='message' class="box" value="message">
         </div>
-    <div><button>Submit</button></div>
+    <div><button  onclick="sendEmail()">Submit</button></div>
+    <div><input class='mybutton' type="submit" value="Submit"></div>
+
+
 <div class='t1'> Contact us:
     <a href="mailto:aviv@referaction.com">sales@referaction.com</a>
     <div class='t1'><a href="https://referaction.com:5000">Sign In</a></div>
 
 </div></body>
+
+<script>
+
+   sendEmail(){
+       const name = document.ret
+   }
+
+
+    </script>
+
 </html>
