@@ -20,6 +20,19 @@
 
 </head>
 <body>
+
+<script>
+    //Add onclick handler to object with ID referaction
+    var element = document.getElementById('referaction');
+    element.onclick = function() { alert('blah'); };
+
+
+
+
+
+
+</script>
+
 <div class="row"></div>
 <div class="row">
     <div class="col-sm"> </div>
@@ -28,8 +41,18 @@
 </div>
 <div class="row">
     <div class="col-sm"> </div>
-    <div class="col-sm"><img class="center" src="Icon.png"/> </div>
+    <div class="col-sm"><img id="referaction" class="center" src="Icon.png" onclick=""/> </div>
     <div class="col-sm"></div>
 </div>
+<div class="row">
+    <div class="col-sm"> </div>
+    <div class="col-sm">
+        <div id="chatbox"/>
+    </div>
+    <div class="col-sm"></div>
+</div>
+
+
+
 </body>
 </html>
