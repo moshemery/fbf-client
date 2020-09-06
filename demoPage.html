@@ -33,8 +33,22 @@
                     version: 'v6.0'});
                 FB.getLoginStatus(function (response) {
                     if (response.status === 'connected') {
-                        var e = document.getElementById("logintofb");
-                        e.parentNode.removeChild(e);}});
+                else {
+                        var loginToFacebook;
+                        loginToFacebook= document.createElement("div");
+                        loginToFacebook.id = "logintofb";
+                        loginToFacebook.class = "fb-login-button";
+                        loginToFacebook.setAttribute('data-size',"large");
+                        loginToFacebook.setAttribute('data-button-type','continue_with');
+                        loginToFacebook.setAttribute('data-layout',"default");
+                        loginToFacebook.setAttribute('data-auto-logout-link',"false");
+                        loginToFacebook.setAttribute('data-use-continue-as',"false");
+                        var element = document.getElementById('_referaction');
+                        element.appendChild(element);
+                    }
+
+
+                });
                 (function (d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0];
                     if (d.getElementById(id)) return;
@@ -67,9 +81,7 @@
 </div>
 <div class="row">
     <div class="col-sm"> </div>
-    <div class="col-sm">
-
-        <div style="alignment: center; font-size: medium ; horiz-align: center;text-align: right">
+    <div id="_referaction" class="col-sm">
             <div id="refDiv" class="fb-send-to-messenger" messenger_app_id="`+env.APP_ID+`" page_id="`+this.facebookPageId+`"
                  data-ref="1:` + this.partnerId + ':' + this.contextId + `" color="blue" size="xlarge" cta_text="LET_US_CHAT"></div>
         </div>
