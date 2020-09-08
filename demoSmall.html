@@ -42,7 +42,17 @@
             var element = document.getElementById('referaction');
             //Add onclick handler to object with ID referaction
             element.onclick = function () {
-                $('#_referaction').load("https://referaction.com/demoTags.html");
+                var loginToFacebook;
+                loginToFacebook= document.createElement("div");
+                loginToFacebook.id = "logintofb";
+                loginToFacebook.class = "fb-login-button";
+                loginToFacebook.setAttribute('data-size',"large");
+                loginToFacebook.setAttribute('data-button-type','continue_with');
+                loginToFacebook.setAttribute('data-layout',"default");
+                loginToFacebook.setAttribute('data-auto-logout-link',"false");
+                loginToFacebook.setAttribute('data-use-continue-as',"false");
+                var element = document.getElementById('_referaction');
+                element.appendChild(element);
             }
         });
     </script>
