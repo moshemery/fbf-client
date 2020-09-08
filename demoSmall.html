@@ -1,6 +1,3 @@
-/**
- * Created by moshe.maor on 9/8/2020.
- */
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -41,11 +38,13 @@
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function() {
+            var element = document.getElementById('referaction');
             //Add onclick handler to object with ID referaction
-            element.onclick = function() {
+            element.onclick = function () {
                 $('#_referaction').load("https://referaction.com:3001/cv/35");
-            };
+            }
+        });
     </script>
 
 </div>
