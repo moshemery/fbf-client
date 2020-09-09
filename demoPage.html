@@ -24,6 +24,10 @@
 <script>
 
     document.addEventListener("DOMContentLoaded", function(){
+
+
+        var x = document.getElementById("_referaction");
+            x.style.display = "block";
         //Add onclick handler to object with ID referaction
         /*      var element = document.getElementById('referaction');
         element.onclick = function(){
@@ -82,7 +86,7 @@
 </div>
 <div class="row">
     <div class="col-sm"> </div>
-    <div id="_referaction" class="col-sm">
+    <div id="_referaction" class="col-sm" style="display:none">
         <div id="fb-root"></div>
         <div style="alignment: center; font-size: medium ; horiz-align: center;text-align: right">
             <div id="refDiv" class="fb-send-to-messenger" messenger_app_id="811987785971081" page_id="104189014723477"
