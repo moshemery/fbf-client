@@ -23,52 +23,19 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v6.0&appId=811987785971081&autoLogAppEvents=1"></script>
 <script>
 
-    document.addEventListener("DOMContentLoaded", function(){
+    function hideOnLoad(e)
+    {
+        e.style.display = "none";
+    }
+    document.addEventListener("DOMContentLoaded", function() {
 
 
-        var x = document.getElementById("_referaction");
-            x.style.display = "block";
         //Add onclick handler to object with ID referaction
-        /*      var element = document.getElementById('referaction');
-        element.onclick = function(){
-            window.fbAsyncInit = function() {
-                FB.init({
-                    xfbml: true,
-                    version: 'v6.0'});
-                FB.getLoginStatus(function (response) {
-                    if (response.status !== 'connected') {
-                        var loginToFacebook;
-                        loginToFacebook= document.createElement("div");
-                        loginToFacebook.id = "logintofb";
-                        loginToFacebook.class = "fb-login-button";
-                        loginToFacebook.setAttribute('data-size',"large");
-                        loginToFacebook.setAttribute('data-button-type','continue_with');
-                        loginToFacebook.setAttribute('data-layout',"default");
-                        loginToFacebook.setAttribute('data-auto-logout-link',"false");
-                        loginToFacebook.setAttribute('data-use-continue-as',"false");
-                        var element = document.getElementById('_referaction');
-                        element.appendChild(element);
-                    }
-
-
-                });
-
-                (function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = 'https://connect.facebook.net/he_IL/sdk/xfbml.customerchat.js';
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-                if (response.status === 'connected') {
-                    FB.Event.subscribe('send_to_messenger',
-                            function (e) {console.log(e);});
-                }
-            }
-        }*/
-
-//import code from remote server
+        var element = document.getElementById('referaction');
+        element.onclick = function () {
+            var x = document.getElementById("_referaction");
+            x.style.display = "block";
+        }
     });
 </script>
 <div id="fb-root"></div>
