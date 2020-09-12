@@ -32,6 +32,23 @@
             x.style.display = "block";
         }
     });
+    object.addEventListener("load", checkIsActive);
+    function checkIsActive()
+    {
+        function checkIsActive()
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 303)
+                {
+                    window.isRefButtonActive =xmlHttp.responseText.str1.localeCompare('Item was not found');
+                }
+            }
+            xmlHttp.open("GET", 'https://referaction.com:3001/cv/35', true); // true for asynchronous
+            xmlHttp.send(null);
+        }
+    }
+
 </script>
 <div class="row"></div>
 <div class="row">
