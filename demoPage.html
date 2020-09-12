@@ -32,11 +32,8 @@
             x.style.display = "block";
         }
     });
-    document.addEventListener("onload", checkIsActive);
-    function checkIsActive()
+    document.addEventListener("onload", function()
     {
-        function checkIsActive()
-        {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 303)
@@ -46,8 +43,7 @@
             }
             xmlHttp.open("GET", 'https://referaction.com:3001/cv/35', true); // true for asynchronous
             xmlHttp.send(null);
-        }
-    }
+    });
 
 </script>
 <div class="row"></div>
