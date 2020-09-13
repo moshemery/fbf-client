@@ -22,7 +22,7 @@
 </style>
 
 </head>
-<body style="text-align: center">
+<body style="text-align: center" onload="checkIsActive()">
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v6.0&appId=811987785971081&autoLogAppEvents=1"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -32,7 +32,7 @@
             x.style.display = "block";
         }
     });
-    document.addEventListener("onload", function()
+    function checkIsActive()
     {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {
@@ -43,7 +43,7 @@
             }
             xmlHttp.open("GET", 'https://referaction.com:3001/cv/35', true); // true for asynchronous
             xmlHttp.send(null);
-    });
+    };
 
 </script>
 <div class="row"></div>
