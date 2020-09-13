@@ -28,7 +28,10 @@
     document.addEventListener("DOMContentLoaded", function() {
         var element = document.getElementById('referaction');
         element.onclick = function () {
-            var x = document.getElementById("_referaction");
+            if(!window.isRefButtonActive)
+                return;
+
+                var x = document.getElementById("_referaction");
             x.style.display = "block";
         }
     });
@@ -36,9 +39,9 @@
     {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {
-                if (xmlHttp.readyState == 4 && xmlHttp.status == 303)
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
                 {
-                    window.isRefButtonActive =xmlHttp.responseText.str1.localeCompare('Item was not found');
+                    window.isRefButtonActive =xmlHttp.responseText.localeCompare('Item was not found');
                 }
             }
             xmlHttp.open("GET", 'https://referaction.com:3001/cv/35', true); // true for asynchronous
