@@ -9,11 +9,38 @@
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
                     var e = document.getElementById("token");
-                    e.innerHTML=response.authResponse.accessToken;}});
+                    e.innerHTML=response.authResponse.accessToken;
+					window.userId=response.authResponse.userId;
+					window.accessToken=response.authResponse.accessToken;
+					}});
+				
 		}
+		
+		function httpGetAsync(theUrl, callback)
+		{
+		    var xmlHttp = new XMLHttpRequest();
+		    xmlHttp.onreadystatechange = function() { 
+		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+		            callback(xmlHttp.responseText);
+		    }
+		    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		    xmlHttp.send(null);
+		}
+		
+		function pageToken()
+		{
+			let url = "https://graph.facebook.com/"+window.userId+"/accounts?fields=name,access_token&access_token=" +window.accessToken;
+			httpGetAsync(url,function(x)
+			{
+				console.log(x);
+			})
+		}
+		
 	</script>
 	<label id='token'></label>
-	<button onclick='login()'></button>
+	<button onclick='login()'>getUserToken</button>
+	<button onclick='pageToken()'>getPageToken</button>
+
 </body>
 	
 
