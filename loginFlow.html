@@ -10,7 +10,7 @@
                 if (response.status === 'connected') {
                     var e = document.getElementById("token");
                     e.innerHTML=response.authResponse.accessToken;
-					window.userID=response.authResponse.userID;
+					window.userId=response.authResponse.userID;
 					window.accessToken=response.authResponse.accessToken;
 					}});
 				
