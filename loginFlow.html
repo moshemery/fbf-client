@@ -1,0 +1,20 @@
+<html>
+
+
+<body>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v6.0&appId=811987785971081&autoLogAppEvents=1"></script>
+    <script>
+		function login()
+		{
+            FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                    var e = document.getElementById("token");
+                    e.innerHTML=response.authResponse.accessToken;}});
+		}
+	</script>
+	<label id='token'></label>
+	<button onclick='login()'></button>
+</body>
+	
+
+</html>
