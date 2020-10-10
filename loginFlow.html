@@ -1,19 +1,25 @@
 <html>
 
 
-<body>
+<body onload='login()'>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v8.0&appId=644512336156464&autoLogAppEvents=1"></script>
     <script>
 		function login()
 		{
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
-                    var e = document.getElementById("token");
+                    var e = document.getElementById("logout");
+					e.style = "display:true";
                     //e.innerHTML=response.authResponse.accessToken;
 					window.userId=response.authResponse.userID;
 					window.accessToken=response.authResponse.accessToken;
-					}});
-				
+					}
+					else
+					{
+                    var e = document.getElementById("continuewith");
+					e.style = "display:true";						
+					}
+				});
 		}
 		
 		function httpGetAsync(theUrl, callback)
@@ -54,7 +60,10 @@
 		}
 		
 	</script>
-<div class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="false" data-width=""></div>
+	<div style="display:none">
+	<div id="continuewith" class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
+	<div id="logout" class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="false" data-width=""></div>
+	</div>
 	<label id='token'></label>
 	<button onclick='login()'>getUserToken</button>
 	<button onclick='pageToken()'>getPageToken</button>
