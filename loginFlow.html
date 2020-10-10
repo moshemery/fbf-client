@@ -41,7 +41,7 @@
 			httpGetAsync(url,function(x)
 			{
 				let msg='';
-				x.forEach(function (item, index) {
+				x.data.forEach(function (item, index) {
   					console.log(item, index);
 					msg+="\nname:" + item.name;
 					msg+="\nid:" + item.id;
