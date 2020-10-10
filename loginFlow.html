@@ -40,8 +40,9 @@
 			console.log(url);
 			httpGetAsync(url,function(x)
 			{
+				const xArray = JSON.parse(x);
 				let msg='';
-				x.data.forEach(function (item, index) {
+				xArray.data.forEach(function (item, index) {
   					console.log(item, index);
 					msg+="\nname:" + item.name;
 					msg+="\nid:" + item.id;
