@@ -9,7 +9,7 @@
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
                     var e = document.getElementById("logout");
-					e.style = "display:true";
+					e.style = "display:inline";
                     //e.innerHTML=response.authResponse.accessToken;
 					window.userId=response.authResponse.userID;
 					window.accessToken=response.authResponse.accessToken;
@@ -17,7 +17,7 @@
 					else
 					{
                     var e = document.getElementById("continuewith");
-					e.style = "display:true";						
+					e.style = "display:inlines";						
 					}
 				});
 		}
