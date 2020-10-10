@@ -34,8 +34,8 @@
 		{
 		//	let url = "https://graph.facebook.com/"+window.userId+"/accounts?fields=name,access_token&access_token=" +window.accessToken;
 			//let url = "https://graph.facebook.com/106563677609074?fields=access_token&access_token="+window.accessToken;
-			let url = 'https://graph.facebook.com/'+window.userId+'/accounts?fields=name,access_token&access_token='+window.accessToken;
-			
+			let url = 'https://graph.facebook.com/v8.0/me/accounts?fields=name,access_token&access_token='+window.accessToken;
+		//	let url = 'https://graph.facebook.com/v8.0/me/accounts?access_token=EAAJKLjjZAlzABAEUzLwhPZCApx0b3jQZA4WeoSGg0U6bqJlK74MZCgrTjYQ6CpYZCcadzY00azcM8ZAz627UxCXDsa4p0vp533PX2lC78OAs7OZCjBjq7gmdnTgzY0P3eYfJzlW15nm71gXwlDm1r8ZBny8q14giAgn3eZByA4iDq8zrV36k9KDR4SwZCnOCnGeN3o9MaezGxkIIdN4UwPdi99&fields=id%2C%20global_brand_page_name%2C%20access_token&format=json&limit=50&method=get&pretty=0&suppress_http_code=1&transport=cors
 			
 			console.log(url);
 			httpGetAsync(url,function(x)
