@@ -9,7 +9,7 @@
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
                     var e = document.getElementById("token");
-                    e.innerHTML=response.authResponse.accessToken;
+                    //e.innerHTML=response.authResponse.accessToken;
 					window.userId=response.authResponse.userID;
 					window.accessToken=response.authResponse.accessToken;
 					}});
@@ -54,6 +54,7 @@
 		}
 		
 	</script>
+	<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
 	<label id='token'></label>
 	<button onclick='login()'>getUserToken</button>
 	<button onclick='pageToken()'>getPageToken</button>
