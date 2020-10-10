@@ -40,8 +40,15 @@
 			console.log(url);
 			httpGetAsync(url,function(x)
 			{
-				window.alert(x.access_token);
-				console.log(x);
+				let msg='';
+				x.forEach(function (item, index) {
+  					console.log(item, index);
+					msg+="\nname:" + item.name;
+					msg+="\nid:" + item.id;
+					msg+="\naccessToken:"+item.access_token
+				});
+				window.alert(msg);
+				console.log(msg);
 			})
 		}
 		
