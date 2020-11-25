@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
+    .center:hover{
+        width: 52%;
+    }
+</style>
+
+</head>
+<body style="text-align: center" onload="checkIsActive()">
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v6.0&appId=644512336156464&autoLogAppEvents=1"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var element = document.getElementById('referaction');
+        element.onclick = function () {
+            if(!window.isRefButtonActive)
+                return;
+
+                var x = document.getElementById("_referaction");
+            	x.style = "display:block";
+        }
+    });
+    function checkIsActive()
+    {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+                    window.isRefButtonActive =xmlHttp.responseText.localeCompare('Item was not found');
+                }
+            }
+            xmlHttp.open("GET", 'https://referaction.com:3001/cv/50', true); // true for asynchronous
+            xmlHttp.send(null);
+    };
+
+</script>
+<div class="row"></div>
+<div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm">רוצים לדבר עם ממליצים?</div>
+    <div class="col-sm"></div>
+</div>
+<div class="row">
+    <div class="col-sm"> </div>
+    <div class="col-sm"><img id="referaction" class="center" width="64" src="Icon.png" onclick=""/> </div>
+    <div class="col-sm"></div>
+</div>
+<div class="row">
+    <div class="col-sm"> </div>
+    <div id="_referaction" class="col-sm" style="display:none">
+        <div id="fb-root"></div>
+        <div style="alignment: center; font-size: medium ; horiz-align: center;text-align: center">
+            <div id="refDiv" class="fb-send-to-messenger" messenger_app_id="644512336156464" page_id="104189014723477"
+                 data-ref="1:36:50" color="blue" size="xlarge" cta_text="LET_US_CHAT"></div>
+        </div>
+    </div>
+    <div class="col-sm"></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
